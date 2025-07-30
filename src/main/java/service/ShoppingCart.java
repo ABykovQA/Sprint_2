@@ -13,7 +13,7 @@ public class ShoppingCart {
     public double getTotalPrice() {
         double total = 0;
         for (Food item : items) {
-            total = total + item.getTotalPrice();
+            total += item.getTotalPrice();
         }
         return total;
     }
@@ -22,8 +22,8 @@ public class ShoppingCart {
         double total = 0;
         for (Food item : items) {
             total += item.getTotalPrice();
-            if (item instanceof Discountable) {
-                double discount = ((Discountable) item).getDiscount();
+            if (item.isVegetarian()) {
+                double discount = item.getDiscount();
                 total -= item.getTotalPrice() * (discount / 100);
             }
         }

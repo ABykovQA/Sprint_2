@@ -11,4 +11,8 @@ public class Meat extends Food {
         return amount * price;
     }
 
+    @Override
+    public double getDiscount() {
+        return 0;
+    }
 }
